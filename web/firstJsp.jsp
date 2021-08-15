@@ -13,20 +13,15 @@
 <body>
     <h1>Testing JSP</h1>
     <p>
-
-        <%@page import="java.util.Date, logic.TestClass" %>
-
-        <% TestClass testClass = new TestClass(); %>
+        <%
+            String name = request.getParameter("name");
+            String surname = request.getParameter("surname");
+        %>
 
         <%=
-            testClass.getInfo()
+            "Hello, " + name + " " + surname
         %>
 
-        <%
-            for (int i = 0; i < 10; i++) {
-                out.println("<p>" + ("Hello world: " + (i+1)) + "</p>");
-            }
-        %>
     </p>
 </body>
 </html>
